@@ -98,7 +98,7 @@ public class RoomsFragment extends Fragment {
 
         /* Get rooms if network is available
            [we have old ones but checking for updates] */
-        getRooms(0);
+        //getRooms(0);
     }
 
     public void getRooms(int severity){
@@ -192,7 +192,7 @@ public class RoomsFragment extends Fragment {
 
                                     // Begin, copy and commit
                                     realm.beginTransaction();
-                                    realm.copyToRealm(room);
+                                    realm.copyToRealmOrUpdate(room);
                                     realm.commitTransaction();
                                 }
                                 if(i == 0){
